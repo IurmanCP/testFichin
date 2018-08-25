@@ -47,6 +47,11 @@ public class Player {
 	public void setUp(boolean b) { up = b;}
 	public void setDown(boolean b) { down = b;}
 	
+	public void setLeft(boolean b) { left = b;}
+	public void setRight(boolean b) { right = b;}
+	public void setUp(boolean b) { up = b;}
+	public void setDown(boolean b) { down = b;}
+	
 	public void update() {
 	
 		if(left) {
@@ -72,7 +77,7 @@ public class Player {
 		
 	}
 
-	public void draw(Grapics2D g) {
+	public void draw(Graphics2D g) {
 		
 		g.setColor(color1);
 		g.fillOval(x - r, y - r, 2 * r , 2 * r);
@@ -81,10 +86,7 @@ public class Player {
 		g.setColor(color1.darker());
 		g.drawOval(x - r, y - r, 2 * r , 2 * r);
 		g.setStroke(new BasicStroke(1));
-		
-		//ir a 5.55 
-		
-		
+
 	}
 	
 
