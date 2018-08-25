@@ -72,7 +72,7 @@ public class Player {
 		
 	}
 
-	public void draw(Grapics2D g) {
+	public void draw(Graphics2D g) {
 		
 		g.setColor(color1);
 		g.fillOval(x - r, y - r, 2 * r , 2 * r);
