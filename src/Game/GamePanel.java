@@ -1,14 +1,12 @@
 package Game;
 
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+
+import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
+
 
 public class GamePanel extends JPanel implements Runnable, KeyListener {
 
@@ -129,7 +127,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 			player.setDown(true);
 		}
 	}
-	public void KeyReleased(KeyEvent key) {
+	public void keyReleased(KeyEvent key) {
 		int keyCode = key.getKeyCode();
 		if(keyCode == KeyEvent.VK_LEFT) {
 			player.setLeft(false);

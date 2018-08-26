@@ -47,10 +47,7 @@ public class Player {
 	public void setUp(boolean b) { up = b;}
 	public void setDown(boolean b) { down = b;}
 	
-	public void setLeft(boolean b) { left = b;}
-	public void setRight(boolean b) { right = b;}
-	public void setUp(boolean b) { up = b;}
-	public void setDown(boolean b) { down = b;}
+
 	
 	public void update() {
 	
