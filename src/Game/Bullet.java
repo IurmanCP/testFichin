@@ -44,4 +44,16 @@ public class Bullet {
 		g.setColor(color1);
 		g.fillOval((int) (x-r),(int) (y-r), 2*r, 2*r);
 	}
+
+	public int getr() {
+		return r;
+	}
+	
+	public double getx() {
+		return x;
+	}
+	
+	public double gety() {
+		return y;
+	}
 }

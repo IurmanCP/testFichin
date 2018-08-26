@@ -106,6 +106,22 @@ public class Player {
 
 	}
 	
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	public int getLives() {
+		return lives;
+	}
+	
+	public int getR() {
+		return r;
+	}
+	
 
 
 }
