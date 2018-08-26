@@ -29,7 +29,8 @@ public class Player {
 	public Player() {
 		
 			x=GamePanel.WIDTH /2;
-			x=GamePanel.HEIGHT /2;
+			y=GamePanel.HEIGHT /2;
+			r=5;
 			
 			dx= 0;
 			dy= 0;
@@ -67,11 +68,13 @@ public class Player {
 		x += dx;
 		y += dy;
 		
-		if(x < r) x =r;
-		if(y < r) y =r;
+		if(x < r) x = r;
+		if(y < r) y = r;
 		if(x > GamePanel.WIDTH - r ) x= GamePanel.WIDTH - r;
-		if(y > GamePanel.HEIGHT - r ) x= GamePanel.HEIGHT - r;
+		if(y > GamePanel.HEIGHT - r ) y= GamePanel.HEIGHT - r;
 		
+		dx = 0;
+		dy = 0;
 	}
 
 	public void draw(Graphics2D g) {

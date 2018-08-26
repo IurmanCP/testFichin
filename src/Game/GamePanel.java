@@ -96,7 +96,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	}
 	
 	private void gameRender() {
-		g.setColor(Color.WHITE);
+		g.setColor(new Color(0, 100, 255));
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 		g.setColor(Color.BLACK);
 		g.drawString("Average FPS: " + averageFPS, 100, 100);
