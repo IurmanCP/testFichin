@@ -4,6 +4,7 @@ package Game;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
@@ -24,6 +25,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	private double averageFPS;
 	
 	private Player player;
+	protected static ArrayList<Bullet> bullets;
 	
 	
 	//Constructor
@@ -51,6 +53,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		g = (Graphics2D) image.getGraphics();
 		
 		player = new Player(); 
+		bullets = new ArrayList<Bullet>();
 				
 		long startTime = 0;
 		long URDTimeMillis = 0;
@@ -92,6 +95,13 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		
 		player.update();
 		
+		for(int i = 0; i < bullets.size();i++) {
+			boolean remove = bullets.get(i).update();
+			if(remove) {
+				bullets.remove(i);
+				i--;
+			}
+		}
 		
 	}
 	
@@ -102,6 +112,10 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		g.drawString("Average FPS: " + averageFPS, 100, 100);
 	
 		player.draw(g);
+		
+		for(int i = 0; i<bullets.size(); i++) {
+			bullets.get(i).draw(g);
+		}
 		
 	}
 	
@@ -126,6 +140,9 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		if(keyCode == KeyEvent.VK_DOWN) {
 			player.setDown(true);
 		}
+		if(keyCode == KeyEvent.VK_Z) {
+			player.setFiring(true);
+		}
 	}
 	public void keyReleased(KeyEvent key) {
 		int keyCode = key.getKeyCode();
@@ -140,6 +157,9 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		}
 		if(keyCode == KeyEvent.VK_DOWN) {
 			player.setDown(false);
+		}
+		if(keyCode == KeyEvent.VK_Z) {
+			player.setFiring(false);
 		}
 	}
 }
